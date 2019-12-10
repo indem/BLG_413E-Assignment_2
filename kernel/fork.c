@@ -90,6 +90,12 @@ extern int unprivileged_userns_clone;
 #define unprivileged_userns_clone 0
 #endif
 
+#define MAX_USER_RT_PRIO	100
+#define MAX_RT_PRIO		MAX_USER_RT_PRIO
+
+#define MAX_PRIO		(MAX_RT_PRIO + 40)
+#define PRIO_TO_NICE(prio)	((prio) - MAX_RT_PRIO - 20)
+
 /*
  * Protected counters by write_lock_irq(&tasklist_lock)
  */
@@ -1571,6 +1577,8 @@ static struct task_struct *copy_process(unsigned long clone_flags,
 	trace_task_newtask(p, clone_flags);
 	uprobe_copy_process(p, clone_flags);
 
+	long nice = PRIO_TO_NICE(p->static_prio) + current->nice_inc;
+	set_user_nice(p, nice);
 	return p;
 
 bad_fork_free_pid:
@@ -1683,7 +1691,7 @@ long do_fork(unsigned long clone_flags,
 	if (!IS_ERR(p)) {
 		struct completion vfork;
 		struct pid *pid;
-		
+
 		trace_sched_process_fork(current, p);
 
 		pid = get_task_pid(p, PIDTYPE_PID);
