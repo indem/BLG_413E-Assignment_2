@@ -31,6 +31,7 @@ int main(int argc, char* argv[]){
 
     if (child1 == 0){
         printf(info_string, "CHILD 1", getppid(), getpid(), nice(0), syscall(GET_NICE_INC, getpid()));
+        printf("[CHILD 1] - Dies.\n");
         exit(0);
     }
     
