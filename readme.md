@@ -29,7 +29,7 @@ test/ directory contains a test program. In the test, the test proceeds as follo
 If the reaper is known beforehand:
 ``` ./test <parent_pid> <parent_nice_inc> <new_parent> <new_parent_nice_inc>```
 
-If the reaper is now known:
+If the reaper is not known:
 ``` ./test <parent_pid> <parent_nice_inc>```
 
 ## Diff Files
