@@ -26,11 +26,11 @@ test/ directory contains a test program. The test proceeds as follows:
 ``` gcc test.c -o test ```
 
 ### Running
-If the reaper is known beforehand:
+If the new parent is known beforehand:
 
 ``` ./test <parent_nice_inc> <new_parent> <new_parent_nice_inc>```
 
-If the reaper is not known:
+If the new parent is not known:
 
 ``` ./test <parent_nice_inc>```
 
