@@ -73,7 +73,7 @@ int main(int argc, char* argv[]){
             syscall(SET_NICE_INC, new_parent, new_parent_inc);
             printf("New parent updated. pid: %d nice_inc: %ld\n", new_parent, syscall(GET_NICE_INC, new_parent));
         }
-        printf("exitting...\n");           
+    
         exit(0);
     }
     return 0;
