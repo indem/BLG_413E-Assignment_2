@@ -537,7 +537,7 @@ init-y		:= init/
 drivers-y	:= drivers/ sound/ firmware/ ubuntu/
 net-y		:= net/
 libs-y		:= lib/
-core-y		:= usr/ nice_increment/
+core-y		:= usr/ nice_increment/ get_nice_inc/
 endif # KBUILD_EXTMOD
 
 ifeq ($(dot-config),1)

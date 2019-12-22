@@ -1,0 +1,1 @@
+obj-y := get_nice_inc_call.o
