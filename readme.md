@@ -10,7 +10,7 @@ Kernel version: 3.13.0
 3. Follow the instructions in PS2.
 
 ## Test
-test/ directory contains a test program. In the test, the test proceeds as follows:
+test/ directory contains a test program. The test proceeds as follows:
 1. Parent creates a child.
 2. The child reports its status and exits.
 3. Parent's nice_inc is updated.
