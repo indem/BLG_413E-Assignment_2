@@ -1,6 +1,4 @@
 # BLG 413E - Assignment 2
-İrem Nur Demirtaş | 150150302
-
 ## Information
 Kernel version: 3.13.0
 
